@@ -1,0 +1,19 @@
+{
+    'author': u'Marius Rieder',
+    'description': u'This is a test',
+    'download_url': 'https://github.com/jiuka/checkmk-extension-builder/test',
+    'files': {
+        'agents': [],
+        'checkman': ['test'],
+        'checks': ['test'],
+        'doc': [],
+        'inventory': [],
+        'notifications': [],
+        'pnp-templates': [],
+        'web': []},
+    'name': 'test',
+    'title': 'title',
+    'version.min_required': '1.6.0',
+    'version': '1.0',
+    'version.packaged': '1.6.0p7'
+}
