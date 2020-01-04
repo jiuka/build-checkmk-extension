@@ -1,0 +1,21 @@
+name: 'build-checkmk-extension'
+description: 'Builds a Checkmk Extension Package'
+inputs:
+  package-file:
+    description: 'Name of the Package file.'
+    default: 'package'
+  directory:
+    description: 'Directory relative to the workspace to work in.'
+  cmk-version:
+    description: 'Checkmk version to use for building.'
+    default: '1.6.0-latest'
+output:
+  name:
+    description: 'Name of the package'
+  version:
+    description: 'Version of the package'
+  pkgfile:
+    description: 'Package file name'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

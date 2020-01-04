@@ -1,0 +1,34 @@
+{
+  "name": "build-checkmk-extension",
+  "version": "1.0.0",
+  "description": "Github Action to build Checkmk Extensions",
+  "main": "src/main.js",
+  "scripts": {
+    "lint": "eslint src/index.js",
+    "package": "ncc build src/index.js -o dist",
+    "test": "eslint src/index.js && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiuka/build-checkmk-extension.git"
+  },
+  "keywords": [
+    "Checkmk",
+    "Extension"
+  ],
+  "author": "Marius Rieder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiuka/build-checkmk-extension/issues"
+  },
+  "homepage": "https://github.com/jiuka/build-checkmk-extension#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.2"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.21.0",
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0"
+  }
+}
