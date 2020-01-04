@@ -12,6 +12,7 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
+    "ignorePatterns": ["*.test.js"],
     "rules": {
     }
 }

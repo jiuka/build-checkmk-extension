@@ -4,9 +4,9 @@
   "description": "Github Action to build Checkmk Extensions",
   "main": "src/main.js",
   "scripts": {
-    "lint": "eslint src/index.js",
+    "lint": "eslint src/",
     "package": "ncc build src/index.js -o dist",
-    "test": "eslint src/index.js && jest"
+    "test": "eslint src/ && jest"
   },
   "repository": {
     "type": "git",
