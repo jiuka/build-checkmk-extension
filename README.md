@@ -1,7 +1,10 @@
 # build-checkmk-extension
 
 <p align="left">
-  <a href="https://github.com/jiuka/build-checkmk-extension/actions"><img alt="build-checkmk-extension status" src="https://github.com/jiuka/build-checkmk-extension/workflows/units-test/badge.svg"></a>
+  <a href="https://github.com/jiuka/build-checkmk-extension/actions">
+    <img alt="build-checkmk-extension status" src="https://github.com/jiuka/build-checkmk-extension/workflows/units-test/badge.svg">
+    <img alt="build-checkmk-extension status" src="https://github.com/jiuka/build-checkmk-extension/workflows/npm%20audit/badge.svg">
+  </a>
 </p>
 
 This action builds a [Checkmk](https://checkmk.de) extension package from a source directory.
