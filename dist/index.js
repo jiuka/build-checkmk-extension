@@ -1573,7 +1573,7 @@ async function run() {
       });
 
       await core.group('Copy files', async function() {
-        let dirs = ['checkman','checks'];
+        let dirs = ['agents','checkman','checks','doc','inventory','notifications','pnp-templates','web'];
         for (let dir of dirs) {
           let path = `${basedir}/${dir}`
           if (fs.existsSync(path)) {
