@@ -1,6 +1,6 @@
 {
   "name": "build-checkmk-extension",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Github Action to build Checkmk Extensions",
   "main": "src/main.js",
   "scripts": {
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/jiuka/build-checkmk-extension#readme",
   "dependencies": {
-    "@actions/core": "^1.2.0",
-    "@actions/exec": "^1.0.2"
+    "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.21.0",
+    "@zeit/ncc": "^0.21.1",
     "eslint": "^6.8.0",
     "jest": "^24.9.0"
   }
