@@ -45,14 +45,19 @@ async function run() {
       });
 
       await core.group('Copy files', async function() {
-        let dirs = ['agents','checkman','checks','doc','inventory','notifications','pnp-templates','web'];
-        for (let dir of dirs) {
-          let path = `${basedir}/${dir}`
-          if (fs.existsSync(path)) {
-            console.log(`Copy: ${dir}`)
-            await container.copy(path, 'cmk:/omd/sites/cmk/local/share/check_mk');
-          } else {
-            console.log(`Skip: ${dir}`)
+        let dirs = {
+          'share/check_mk': ['agents','checkman','checks','doc','inventory','notifications','pnp-templates','web'],
+          'lib/check_mk/base/plugins': ['agent_based'],
+        }
+        for (let dest in dirs) {
+          for (let dir of dirs[dest]) {
+            let path = `${basedir}/${dir}`
+            if (fs.existsSync(path)) {
+                console.log(`Copy: ${dir}`)
+                await container.copy(path, `cmk:/omd/sites/cmk/local/${dest}`);
+            } else {
+                console.log(`Skip: ${dir}`)
+            }
           }
         }
         await container.copy(`${basedir}/${pkgFile}`, `cmk:/omd/sites/cmk/var/check_mk/packages/${metadata.name}`)
