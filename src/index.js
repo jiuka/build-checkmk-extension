@@ -45,12 +45,16 @@ async function run() {
       });
 
       await core.group('Copy files', async function() {
-        let dirs = ['agents','checkman','checks','doc','inventory','notifications','pnp-templates','web'];
-        for (let dir of dirs) {
+        let dirs = Object.entries({
+          'share/check_mk': ['agents','checkman','checks','doc','inventory','notifications','pnp-templates','web'],
+          'lib/check_mk/base/plugins': ['agent_based'],
+        }).flatMap(([target, dirs]) => dirs.map(dir => [dir, target]));
+        
+        for (let [dir, target] of dirs) {
           let path = `${basedir}/${dir}`
           if (fs.existsSync(path)) {
             console.log(`Copy: ${dir}`)
-            await container.copy(path, 'cmk:/omd/sites/cmk/local/share/check_mk');
+            await container.copy(path, `cmk:/omd/sites/cmk/${target}`);
           } else {
             console.log(`Skip: ${dir}`)
           }
