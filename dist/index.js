@@ -1713,7 +1713,7 @@ async function run() {
           let path = `${basedir}/${dir}`
           if (fs.existsSync(path)) {
             console.log(`Copy: ${dir}`)
-            await container.copy(path, `cmk:/omd/sites/cmk/${target}`);
+            await container.copy(path, `cmk:/omd/sites/cmk/local/${target}`);
           } else {
             console.log(`Skip: ${dir}`)
           }
