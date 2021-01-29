@@ -11,9 +11,22 @@ This action builds a [Checkmk](https://checkmk.de) extension package from a sour
 
 # Usage
 
+Version 2 introduces support for the new agent_based Plugins introduced in Checkmk Version 2. For extensions for Checkmk Version 1.6 and below please use Version 1 of the action.
+
 See [action.yml](action.yml)
 
 ## Basic
+
+### Build Extension for Checkmk 2
+
+```yaml
+steps:
+- uses: actions/checkout@v1
+- uses: jiuka/build-checkmk-extension@v2
+```
+
+### Build Extension for Checkmk 1
+
 ```yaml
 steps:
 - uses: actions/checkout@v1

@@ -8,7 +8,7 @@ inputs:
     description: 'Directory relative to the workspace to work in.'
   cmk-version:
     description: 'Checkmk version to use for building.'
-    default: '1.6.0-latest'
+    default: '2.0.0-latest'
 output:
   name:
     description: 'Name of the package'
