@@ -1721,7 +1721,7 @@ async function run() {
 
         if (fs.existsSync(`${basedir}/nagios_plugins`)) {
           console.log(`Copy: nagios_plugins`)
-          await container.copy(`${basedir}/nagios_plugins`, `cmk:/omd/sites/cmk/local/lib/nagios/plugins`);
+          await container.copy(`${basedir}/nagios_plugins/.`, `cmk:/omd/sites/cmk/local/lib/nagios/plugins`);
         } else {
           console.log(`Skip: nagios_plugins`)
         }
